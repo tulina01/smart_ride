@@ -2,26 +2,24 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:tuple/tuple.dart';
 
 class RiskCalculator {
-
-
- static double maxAngleSpeed(List incidentList) {
+  static double maxAngleSpeed(List incidentList) {
     double maxAngle = -1;
-      double maxAngleSpeed = 0.0;
+    double maxAngleSpeed = 0.0;
 
-      for (var incidentSnapshot in incidentList) {
-        double speed = (incidentSnapshot['speed'] as num).toDouble();
-        int angle = incidentSnapshot['angle'];
+    for (var incidentSnapshot in incidentList) {
+      double speed = (incidentSnapshot['speed'] as num).toDouble();
+      int angle = incidentSnapshot['angle'];
 
-        double overallRisk = prerisk(angle, speed);
-        if (angle.toDouble() > maxAngle) {
-          maxAngle = angle.toDouble();
-          maxAngleSpeed = speed;
-        }
+      double overallRisk = prerisk(angle, speed);
+      if (angle.toDouble() > maxAngle) {
+        maxAngle = angle.toDouble();
+        maxAngleSpeed = speed;
       }
-      return maxAngleSpeed;
+    }
+    return maxAngleSpeed;
   }
 
- static double prerisk(int angle, double speed) {
+  static double prerisk(int angle, double speed) {
     double speedRisk = calculateSpeedRisk(speed);
     double angleRisk = calculateAngleRisk(angle, speed);
     double overallRisk = (speedRisk + angleRisk) / 2;
@@ -45,7 +43,7 @@ class RiskCalculator {
     }
   }
 
- static double calculateAngleRisk(int angle, double speed) {
+  static double calculateAngleRisk(int angle, double speed) {
     if (speed <= 10.0 && angle <= 2) {
       // Make sure to use 0.0 instead of 0
       return 0.0;
@@ -82,7 +80,8 @@ class RiskCalculator {
     return totalOverallRisk;
   }
 
-  static double calculateMinOverallRisk(List<QueryDocumentSnapshot> incidentList) {
+  static double calculateMinOverallRisk(
+      List<QueryDocumentSnapshot> incidentList) {
     double minOverallRisk = double.infinity;
 
     for (var incidentSnapshot in incidentList) {
@@ -98,7 +97,8 @@ class RiskCalculator {
     return minOverallRisk;
   }
 
-  static double calculateMaxOverallRisk(List<QueryDocumentSnapshot> incidentList) {
+  static double calculateMaxOverallRisk(
+      List<QueryDocumentSnapshot> incidentList) {
     double maxOverallRisk = 0.0;
 
     for (var incidentSnapshot in incidentList) {
@@ -114,7 +114,8 @@ class RiskCalculator {
     return maxOverallRisk;
   }
 
-  static Tuple2<double, double> calculateMaxAngleMetrics(List<QueryDocumentSnapshot> incidentList) {
+  static Tuple2<double, double> calculateMaxAngleMetrics(
+      List<QueryDocumentSnapshot> incidentList) {
     double maxAngle = -1;
     double maxAngleSpeed = 0.0;
 
@@ -128,9 +129,7 @@ class RiskCalculator {
         maxAngleSpeed = speed;
       }
     }
-    
 
     return Tuple2(maxAngle, maxAngleSpeed);
   }
-
 }

@@ -2,7 +2,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <application
-        android:label="adeesha_bike_ridesense"
+        android:label="smart_ride"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

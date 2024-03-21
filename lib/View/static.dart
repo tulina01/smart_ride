@@ -1,4 +1,3 @@
-import 'package:adeesha_bike_ridesense/components/riskcalc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fl_chart/fl_chart.dart';
@@ -6,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 import '../components/flutter_toast.dart';
+import '../components/riskcalc.dart';
 
 class StaticChart extends StatefulWidget {
   const StaticChart({super.key});
@@ -81,10 +81,11 @@ class _StaticChartState extends State<StaticChart> {
             }
 
             List<QueryDocumentSnapshot> incidentList = snapshot.data!.docs;
-            int totalIncidents = incidentList.length;        
-            double totalOverallRisk = RiskCalculator.calculateOverallRisk(incidentList);
-            double averageRisk = totalIncidents > 0 ? totalOverallRisk / totalIncidents : 0.0;
-
+            int totalIncidents = incidentList.length;
+            double totalOverallRisk =
+                RiskCalculator.calculateOverallRisk(incidentList);
+            double averageRisk =
+                totalIncidents > 0 ? totalOverallRisk / totalIncidents : 0.0;
 
             return Center(
               child: Column(

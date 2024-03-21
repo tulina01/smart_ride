@@ -1,11 +1,11 @@
-import 'package:adeesha_bike_ridesense/View/history.dart';
-import 'package:adeesha_bike_ridesense/View/loyality.view.dart';
-import 'package:adeesha_bike_ridesense/View/setting.dart';
-import 'package:adeesha_bike_ridesense/View/static.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import 'history.dart';
 import 'lasttrip.dart';
+import 'loyality.view.dart';
+import 'setting.dart';
+import 'static.dart';
 
 class Menu extends StatefulWidget {
   const Menu({Key? key}) : super(key: key);

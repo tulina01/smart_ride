@@ -1,8 +1,7 @@
-import 'package:adeesha_bike_ridesense/View/menu.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../View/login.view.dart';
-
+import '../View/menu.dart';
 
 class AuthChanges extends StatelessWidget {
   const AuthChanges({super.key});
@@ -18,7 +17,7 @@ class AuthChanges extends StatelessWidget {
           if (snapshot.hasData) {
             return const Menu();
           } else {
-            return  LoginView();
+            return LoginView();
           }
         }
       },

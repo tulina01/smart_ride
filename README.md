@@ -1,4 +1,4 @@
-# adeesha_bike_ridesense
+# smart_ride
 
 A new Flutter project.
 

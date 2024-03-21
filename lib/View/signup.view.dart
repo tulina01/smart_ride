@@ -1,12 +1,12 @@
-import 'package:adeesha_bike_ridesense/View/menu.dart';
-import 'package:adeesha_bike_ridesense/View/widgets/text.form.global.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:smart_ride/View/widgets/text.form.global.dart';
 
 import '../components/flutter_toast.dart';
 import '../utils/global.colors.dart';
 import 'login.view.dart';
+import 'menu.dart';
 
 class SignupView extends StatelessWidget {
   SignupView({Key? key}) : super(key: key);

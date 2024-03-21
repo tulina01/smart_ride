@@ -1,7 +1,7 @@
-import 'package:adeesha_bike_ridesense/View/splash.veiw.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'View/splash.veiw.dart';
 import 'firebase_options.dart';
 
 void main() async {

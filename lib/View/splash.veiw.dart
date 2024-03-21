@@ -1,8 +1,7 @@
 import 'dart:async';
-
-import 'package:adeesha_bike_ridesense/components/auth_state_changes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../components/auth_state_changes.dart';
 import '../utils/global.colors.dart';
 
 class SplashView extends StatelessWidget {
@@ -17,7 +16,7 @@ class SplashView extends StatelessWidget {
       backgroundColor: GlobalColor.mainColor,
       body: const Center(
         child: Text(
-          'RIDESENSE',
+          'SMART RIDE',
           style: TextStyle(
             color: Colors.white,
             fontSize: 35,
